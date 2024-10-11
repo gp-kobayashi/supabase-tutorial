@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import TodoList from "./TodoList";
 import styles from "@/styles/Home.module.css";
 import { addTodo, getAllTodos } from "@/utils/supabaseFunction";
-import { title } from "process";
+import { Todo } from "@/utils/interface";
 
 const TodoApp = () => {
     const [todos, setTodos] = useState<any>([]);
