@@ -5,24 +5,24 @@ import { addTodo, getAllTodos } from "@/utils/supabaseFunction";
 import { Todo } from "@/utils/interface";
 
 const TodoApp = () => {
-    const [todos, setTodos] = useState<any>([]);
+    const [todos, setTodos] = useState<Todo[]>([]);
     const [title, setTitle] = useState<string>("");
     useEffect(() => {
         const getTodos = async () => {
             const todos = await getAllTodos();
-            setTodos(todos);
+            setTodos(todos || []);
             console.log(todos);
         }
         getTodos();
     }, []);
 
-    const handleSubmit = async (e :any) => {
+    const handleSubmit = async (e : React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (title === "") return
 
         await addTodo(title);
         let todos = await getAllTodos();
-        setTodos(todos);
+        setTodos(todos || []);
 
         setTitle("");
     };

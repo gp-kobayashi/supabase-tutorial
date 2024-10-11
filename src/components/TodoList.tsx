@@ -1,11 +1,11 @@
 import { Todo } from "@/utils/interface";
 import { deleteTodo, getAllTodos } from "@/utils/supabaseFunction";
-import React from "react";
+import React, { SetStateAction } from "react";
 import styles from "@/styles/Home.module.css";
 
 type Props = {
     todos: Todo[];
-    setTodos: React.Dispatch<any>;
+    setTodos: React.Dispatch<SetStateAction<Todo[]>>;
 }
 
 const TodoList = (props: Props) => {
@@ -14,7 +14,7 @@ const TodoList = (props: Props) => {
     const handleDelete = async (id: number) => {
         await deleteTodo(id);
         let todos = await getAllTodos();
-        setTodos(todos);
+        setTodos(todos || []);
     }
 
     return <div>
