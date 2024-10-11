@@ -29,11 +29,12 @@ const TodoApp = () => {
 
     return <section>
         <h3 className={styles.title}>Supabase Todo App</h3>
-        <form onSubmit={(e) => handleSubmit(e)}>
+        <form className={styles.todo_form} onSubmit={(e) => handleSubmit(e)}>
             <input type="text"
+            className={styles.input}
             onChange={(e) => setTitle(e.target.value)}
             value={title}/>
-            <button>Add</button>
+            <button className={styles.add_btn}>Add</button>
         </form>
         <TodoList todos={todos} setTodos={setTodos}/>
     </section>

@@ -1,6 +1,7 @@
 import { Todo } from "@/utils/interface";
 import { deleteTodo, getAllTodos } from "@/utils/supabaseFunction";
 import React from "react";
+import styles from "@/styles/Home.module.css";
 
 type Props = {
     todos: Todo[];
@@ -19,9 +20,9 @@ const TodoList = (props: Props) => {
     return <div>
         <ul>
             {todos.map((todo) => (
-                <div key={todo.id}>
-                <li>{todo.title}</li>
-                <span onClick={() => handleDelete(todo.id)}>×</span>
+            <div className={styles.todo_item} key={todo.id}>
+                <li className={styles.todo_text}>{todo.title}</li>
+                <span className={styles.todo_delete_btn} onClick={() => handleDelete(todo.id)}>×</span>
             </div>
             ))}
         </ul>

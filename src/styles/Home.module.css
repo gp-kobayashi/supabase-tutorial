@@ -5,3 +5,46 @@
 .title{
   font-size: 20px;
 }
+
+.input{
+  width: 200px;
+  height: 25px;
+}
+
+.todo_form{
+  display: flex;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.add_btn{
+  border: none;
+  background-color: paleturquoise;
+  height: 30px;
+  width: 50px;
+  margin-left: 15px;
+  border-radius: 5px;
+  cursor:pointer;
+}
+
+.todo_item{
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  margin: 10px auto;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: wheat;
+}
+
+.todo_text{
+  font-size: 20px;
+  margin-left: 5px;
+  list-style: none;
+}
+
+.todo_delete_btn{
+  font-size: 20px;
+  margin-right: 5px;
+  cursor: pointer;
+}
